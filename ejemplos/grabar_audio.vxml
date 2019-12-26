@@ -1,0 +1,19 @@
+<vxml version="2.1" xml:lang="es-ES">
+    <form>
+        <record name="saludo" beep="true" maxtime="10s" finalsilence="4000ms" dtmfterm="true" type="audio/wav">
+            <prompt>Graba tu mensaje tras escuchar el tono</prompt>
+            <noinput>No he oido nada, intentalo de nuevo</noinput>
+        </record>
+        <field name="confirmacion" type="boolean">
+            <prompt>Tu mensaje es <value expr="saludo"/>
+            </prompt>
+            <prompt>Para mantenerlo, di si. Para descartarlo, di no</prompt>
+            <filled>
+                <if cond="confirmacion">
+                    <submit next="guardar_saludo.pl" method="post" namelist="saludo"/>
+                </if>
+                <clear/>
+            </filled>
+        </field>
+    </form>
+</vxml>

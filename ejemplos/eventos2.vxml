@@ -1,0 +1,19 @@
+<vxml version="2.1" xml:lang="es-ES">
+    <form id="lanzamiento_misiles">
+        <field name="id_usuario" type="digits">
+            <prompt>Nombre de usuario?</prompt>
+        </field>
+        <field name="clave">
+            <prompt>Cual es la clave?</prompt>
+            <grammar>lechuga</grammar>
+            <help>Es el nombre de un vegetal</help>
+            <catch event="nomatch noinput" count="3">
+                <prompt>Violacion de seguridad!</prompt>
+                <submit next=http://www.ejemplo.com/intruso.vxml namelist="id_usuario"/>
+            </catch>
+        </field>
+        <block>
+            <goto next="#obtener_ciudad"/>
+        </block>
+    </form>
+</vxml>

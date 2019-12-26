@@ -5,7 +5,7 @@
         <grammar src="viajar_de_a.jsgf"/>
         <block>
             <prompt bargein="false">
-                Bienvenido a nuestro sistema automatico de informacion...
+                Bienvenido a nuestro sistema automatico de informacion
             </prompt>
         </block>
         <initial name="prompt_inicial">
@@ -16,8 +16,10 @@
             <nomatch count="2">
                 Lo siento, sigo sin comprender lo que dices. Voy a solicitarte la
                 informacion por partes
-                <assign name="prompt_inicial" expr="true"/>
-                <reprompt/>
+                <!-- Las dos siguientes líneas en conjunto lo que hacen 
+                es saltar al siguiente prompt cuando el usuario no dice nada dentro de la gramatica-->
+                <assign name="prompt_inicial" expr="true"/> <!-- Con esto consigue que no se vuelva a ejecutar el prompt prompt_inicial-->
+                <reprompt/><!-- salta al siguiente prompt que se encuentre disponible-->
             </nomatch>
         </initial>
         <field name="ciudadOrigen">

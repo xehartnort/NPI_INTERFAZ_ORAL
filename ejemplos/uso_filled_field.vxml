@@ -1,0 +1,13 @@
+<vxml version="2.1" xml:lang="es-ES">
+    <form id="obtener_ciudades_origen_destino">
+        <field name="ciudad">
+            <grammar src="http://www.gramaticas.ejemplo/ciudades.jsgf"/>
+            <prompt>Como se llama la ciudad?</prompt>
+            <filled>
+                <if cond="ciudad == 'Sevilla' ">
+                    <prompt>El servicio a Sevilla ha sido interrumpido</prompt>
+                </if>
+            </filled>
+        </field>
+    </form>
+</vxml>

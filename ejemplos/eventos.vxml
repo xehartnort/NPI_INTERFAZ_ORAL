@@ -1,0 +1,36 @@
+<!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/voicexml21/vxml.dtd">
+<vxml version="2.1" xml:lang="es-ES">
+    <link event="exit">
+        <grammar>adios|terminar|finalizar</grammar>
+    </link>
+    <form id="analisis_04_02_2004">
+        <catch event="exit">
+            <goto nextitem="confirmar_salida"/>
+        </catch>
+        <block>
+            <prompt>Hola, has sido elegido aleatoriamente para contestar a las preguntas de una encuesta</prompt>
+        </block>
+        <field name="p1" type="boolean">
+            <prompt>Estás de acuerdo con la postura del gobierno respecto a la guerra en Irak?</prompt>
+        </field>
+        <field name="p2" type="boolean">
+            <prompt>Crees que realmente existia una amenaza de armas de destruccion masiva en Irak?</prompt>
+        </field>
+        <block>
+            <submit next="miServidor.miDomnio.es" namelist="p1 p2"/>
+        </block>
+        <field name="confirmar_salida" type="boolean">
+            <prompt>Seguro que deseas terminar la encuesta?</prompt>
+            <filled>
+                <if cond="confirmar_salida">
+                    De acuerdo, adios.
+                    <exit/>
+                    <else/>
+                    De acuerdo, continuemos por donde nos quedamos.
+                    <clear namelist="confirmar_salida"/>
+                    <!-- Con esto hace posible que se pueda volver a usar confirmar_salida-->
+                </if>
+            </filled>
+        </field>
+    </form>
+</vxml>

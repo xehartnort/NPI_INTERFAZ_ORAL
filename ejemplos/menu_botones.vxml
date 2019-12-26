@@ -1,0 +1,18 @@
+<vxml version="2.1" xml:lang="es-ES">
+    <menu>
+        <property name="inputmodes" value="voice dtmf"/>
+        <prompt>
+            Para deportes pulsa 1, para parte meteorologico pulsa 2, para noticias real
+            madrid pulsa 3.
+        </prompt>
+        <choice dtmf="1" next="http://www.deportes.ejemplo/vxml/start.vxml"/>
+            <prompt>
+                <audio="http://www.deportes.ejemplo/voice/bienvenida_deportes.wav">
+                Bienvenido a la seccion de deportes
+                </audio>
+            </prompt>
+        </choice>
+        <choice dtmf="2" next="http://www.previsiones.ejemplo/intro.vxml"/>
+        <choice dtmf="3" next="http://www.real-madrid.ejemplo/voice/start.vxml"/>
+    </menu>
+</vxml>
