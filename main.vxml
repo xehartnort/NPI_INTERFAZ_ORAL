@@ -1,0 +1,25 @@
+<!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/voicexml21/vxml.dtd">
+<vxml version="2.1">
+    <form id="init">
+        <property name="bargein" value="true"/>
+        <block>
+            <prompt xml:lang="es-es"> Bienvenido, pulsa 1 para elegir voz castellana </prompt>
+            <prompt xml:lang="en-us"> Welcome, press 2 to set english voice </prompt>
+        </block>
+        <field name="main_lang">
+            <option dtmf="1" value="es"/>
+            <option dtmf="2" value="en"/>
+            <catch event="nomatch noinput">
+                <goto next="#init"/>
+            </catch>
+
+            <filled>
+                <if cond="main_lang=='es'">
+                    <goto next="menu_espanol.vxml"/>
+                <else/>
+                    <goto next="menu_ingles.vxml"/>
+                </if>
+            </filled>
+        </field>
+    </form>
+</vxml>
