@@ -1,3 +1,4 @@
+<!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/voicexml21/vxml.dtd">
 <vxml version="2.1" xml:lang="es-ES">
     <form>
         <record name="saludo" beep="true" maxtime="10s" finalsilence="4000ms" dtmfterm="true" type="audio/wav">

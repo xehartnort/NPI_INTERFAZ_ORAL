@@ -1,22 +1,25 @@
+<!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/voicexml21/vxml.dtd">
 <vxml version="2.1" xml:lang="es-ES">
-    <field name="numero_telefono" type="phone">
-        <prompt>Cual es tu numero de telefono?</prompt>
-    </field>
-    <!-- La confirmación del teléfono se realiza sólo si el valor de confianza obtenido es < 0.6 -->
-    <field name="confirmacion_telef" type="boolean" cond="0.6 > numero_telefono$.confidence">
-        <!--el teléfono se reproduce dígito a dígito (pe. 9 5 8 1 2 3 4 5 6) -->
-        <prompt>Has dicho <value expr="numero_telefono"/>
+    <form>
+        <field name="numero_telefono" type="phone">
+            <prompt>Cual es tu numero de telefono?</prompt>
+        </field>
+        <!-- La confirmación del teléfono se realiza sólo si el valor de confianza obtenido es < 0.6 -->
+        <field name="confirmacion_telef" type="boolean" cond="0.6 > numero_telefono$.confidence">
+            <!--el teléfono se reproduce dígito a dígito (pe. 9 5 8 1 2 3 4 5 6) -->
+            <prompt>Has dicho <value expr="numero_telefono"/>
 ?
-        </prompt>
-        <!-- El teléfono se reproduce respectando formato usado por usuario (p.e. 9 5 8 12 34 56) -->
-        <prompt>Has dicho <value expr="numero_telefono$.utterance"/>
+            </prompt>
+            <!-- El teléfono se reproduce respectando formato usado por usuario (p.e. 9 5 8 12 34 56) -->
+            <prompt>Has dicho <value expr="numero_telefono$.utterance"/>
 ?
-        </prompt>
-        <filled>
-            <!-- Si usuario no confirma, no teléfono se le solicita de nuevo -->
-            <if cond="!confirmacion_telef">
-                <clear namelist="numero_telefono"/>
-            </if>
-        </filled>
-    </field>
+            </prompt>
+            <filled>
+                <!-- Si usuario no confirma, no teléfono se le solicita de nuevo -->
+                <if cond="!confirmacion_telef">
+                    <clear namelist="numero_telefono"/>
+                </if>
+            </filled>
+        </field>
+    </form>
 </vxml>
