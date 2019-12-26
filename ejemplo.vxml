@@ -1,0 +1,33 @@
+
+<!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/voicexml21/vxml.dtd">
+<vxml version="2.1" xml:lang="es-ES">
+    <form id="viajar_de_a">
+        <grammar src="viajar_de_a.jsgf"/>
+        <block>
+            <prompt bargein="false">
+                Bienvenido a nuestro sistema automatico de informacion...
+            </prompt>
+        </block>
+        <initial name="prompt_inicial">
+            <prompt>Desde que ciudad a que ciudad deseas viajar?</prompt>
+            <nomatch count="1">
+                Por ejemplo, di desde Granada a Cordoba
+            </nomatch>
+            <nomatch count="2">
+                Lo siento, sigo sin comprender lo que dices. Voy a solicitarte la
+                informacion por partes
+                <assign name="prompt_inicial" expr="true"/>
+                <reprompt/>
+            </nomatch>
+        </initial>
+        <field name="ciudadOrigen">
+            <grammar src="ciudades.jsgf"/>
+            <prompt>Desde que ciudad deseas salir?</prompt>
+        </field>
+        <field name="ciudadDestino">
+            <prompt>A que ciudad quieres viajar?</prompt>
+            <grammar src="ciudades.jsgf"/>
+        </field>
+    </form>
+</vxml>
+
