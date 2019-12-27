@@ -1,25 +1,75 @@
 <!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/voicexml21/vxml.dtd">
 <vxml version="2.1">
+    <var name="main_lang" expr="''"/>
     <form id="init">
         <property name="bargein" value="true"/>
         <block>
-            <prompt xml:lang="es-es"> Bienvenido, pulsa 1 para elegir voz castellana </prompt>
+            <prompt xml:lang="es-es"> Bienvenido, pulsa 1 para elegir voz en castellano </prompt>
             <prompt xml:lang="en-us"> Welcome, press 2 to set english voice </prompt>
         </block>
-        <field name="main_lang">
+        <field name="lang">
             <option dtmf="1" value="es"/>
             <option dtmf="2" value="en"/>
             <catch event="nomatch noinput">
                 <goto next="#init"/>
             </catch>
-
             <filled>
-                <if cond="main_lang=='es'">
+                <assign name="main_lang" expr="lang"/>
+                <if cond="lang == 'es'">
+                    <prompt xml:lang="es-es">
+                        Has elegido la voz en castellano.
+                    </prompt>
                     <goto next="menu_espanol.vxml"/>
-                <else/>
+                <elseif cond = "lang == 'en'"/>
+                    <prompt xml:lang="en-us">
+                        You have chosen to set english voice.
+                    </prompt>
                     <goto next="menu_ingles.vxml"/>
                 </if>
             </filled>
         </field>
     </form>
+    <!--
+
+    <link event = "leyenda">
+        <grammar>
+            leyenda
+        </grammar>
+    </link>
+    <catch event="leyenda">
+        <if cond="main_lang == 'es'">
+            <prompt xml:lang="es-es">
+                Vale, te voy a contar una leyenda
+            </prompt>
+            <goto next="leyenda_es.vxml"/>
+        <elseif cond = "main_lang == 'en'"/>
+            <prompt xml:lang="en-us">
+                Ok, I am going to tell you a legend
+            </prompt>
+            <goto next="leyenda_en.vxml"/>
+        <else/>
+            <goto next="#init"/>
+        </if>
+    </catch>
+    <link event = "historia">
+        <grammar>
+            historia
+        </grammar>
+    </link>
+    <catch event="historia">
+        <if cond="main_lang == 'es'">
+            <prompt xml:lang="es-es">
+                Vale, te voy a contar algo de historia
+            </prompt>
+            <goto next="historia_es.vxml"/>
+        <elseif cond = "main_lang == 'en'"/>
+            <prompt xml:lang="en-us">
+                Ok, I am going to tell you something about history
+            </prompt>
+            <goto next="historia_en.vxml"/>
+        <else/>
+            <goto next="#init"/>
+        </if>
+    </catch>
+    -->
 </vxml>

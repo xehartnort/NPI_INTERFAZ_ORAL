@@ -1,8 +1,18 @@
 <!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/voicexml21/vxml.dtd">
-<vxml version="2.1" xml:lang="es-es">
-    <form>
-        <block>
-            <prompt>Papa es papa en espaniolito</prompt>
-        </block>
-    </form>
+<vxml version="2.1" xml:lang="es-es" application="main.vxml">
+    <menu dtmf="true" accept="approximate">
+        <prompt>
+            Bienvenido al menu principal
+            <break/>
+            <enumerate>
+                Para <value expr="_prompt"/>, di <value expr="_prompt"/> o pulsa <value expr="_dtmf"/>
+            </enumerate>
+        </prompt>
+        <choice next="leyenda_es.vxml">
+            conocer leyendas 
+        </choice>
+        <choice next="historia_es.vxml">
+            saber sobre historia 
+        </choice>
+    </menu>
 </vxml>
