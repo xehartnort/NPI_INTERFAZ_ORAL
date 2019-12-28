@@ -1,3 +1,4 @@
 *.pdf
 webserver/node_modules
 webserver/package-lock.json
+webserver/*.info

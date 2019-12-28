@@ -1,6 +1,21 @@
 const express = require('express')
+const winston = require('winston');
 const sqlite3 = require('sqlite3').verbose();
 const xml = require('xml');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.json(),
+  defaultMeta: { service: 'user-service' },
+  transports: [
+    //
+    // - Write all logs with level `error` and below to `error.info`
+    // - Write all logs with level `info` and below to `combined.info`
+    //
+    new winston.transports.File({ filename: 'error.info', level: 'error' }),
+    new winston.transports.File({ filename: 'combined.info' })
+  ]
+});
 
 const app = express()
 const port = 3000
@@ -8,9 +23,9 @@ const port = 3000
 // open the database
 const db = new sqlite3.Database('./db/curiosidades.db', sqlite3.OPEN_READWRITE, (err) => {
   if (err) {
-    console.error(err.message);
+    logger.error(err.message);
   }
-  console.log('Connected :D');
+  logger.info('Connected :D');
 });
 
 
@@ -26,7 +41,7 @@ app.get('/historia', (request, response) => {
       sql = `UPDATE historia SET uso = ${row.uso + 1} WHERE texto= "${row.texto}"`;
       db.run(sql, [], (err) => {
         if (err) {
-          return console.error(err.message);
+          return logger.error(err.message);
         }
       });
     });
@@ -48,7 +63,7 @@ app.get('/leyenda', (request, response) => {
       sql = `UPDATE leyenda SET uso = ${row.uso + 1} WHERE texto= "${row.texto}"`;
       db.run(sql, [], (err) => {
         if (err) {
-          return console.error(err.message);
+          return logger.error(err.message);
         }
       });
     });
@@ -60,8 +75,12 @@ app.get('/leyenda', (request, response) => {
 
 app.listen(port, (err) => {
   if (err) {
-    return console.log('something bad happened', err)
+    return logger.info('something bad happened', err)
   }
 
-  console.log(`server is listening on ${port}`)
-})
+  logger.info(`server is listening on ${port}`)
+});
+
+
+
+
