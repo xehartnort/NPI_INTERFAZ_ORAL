@@ -1,5 +1,6 @@
 const express = require('express')
 const sqlite3 = require('sqlite3').verbose();
+const xml = require('xml');
 
 const app = express()
 const port = 3000
@@ -15,12 +16,13 @@ const db = new sqlite3.Database('./db/curiosidades.db', sqlite3.OPEN_READWRITE, 
 
 app.get('/historia', (request, response) => {
   if (request.query.idioma) {
-    let sql = "SELECT * FROM historia WHERE idioma=? ORDER BY uso ASC";
+    let sql = "SELECT texto, uso FROM historia WHERE idioma=? ORDER BY uso ASC";
     db.get(sql, [request.query.idioma], (err, row) => {
       if (err) {
         throw err;
       }
-      response.send(row.texto);
+      response.set('Content-Type', 'text/xml');
+      response.send(xml(row));
       sql = `UPDATE historia SET uso = ${row.uso + 1} WHERE texto= "${row.texto}"`;
       db.run(sql, [], (err) => {
         if (err) {
@@ -36,12 +38,13 @@ app.get('/historia', (request, response) => {
 
 app.get('/leyenda', (request, response) => {
   if (request.query.idioma) {
-    let sql = "SELECT * FROM leyenda WHERE idioma=? ORDER BY uso ASC";
+    let sql = "SELECT texto, uso FROM leyenda WHERE idioma=? ORDER BY uso ASC";
     db.get(sql, [request.query.idioma], (err, row) => {
       if (err) {
         throw err;
       }
-      response.send(row.texto);
+      response.set('Content-Type', 'text/xml');
+      response.send(xml(row));
       sql = `UPDATE leyenda SET uso = ${row.uso + 1} WHERE texto= "${row.texto}"`;
       db.run(sql, [], (err) => {
         if (err) {
