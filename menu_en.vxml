@@ -1,18 +1,19 @@
 <!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/voicexml21/vxml.dtd">
-<vxml version="2.1" xml:lang="en-us" application="main.vxml">
+<vxml version="2.1" xml:lang="en-us" application="root.vxml">
     <menu dtmf="true" accept="approximate">
         <prompt>
             Welcome to the main menu
-            <break/>
-            <enumerate>
-                To <value expr="_prompt"/>, say <value expr="_prompt"/> or press <value expr="_dtmf"/>
+            <break time="500ms"/>
+            <enumerate> 
+                To know about <value expr="_prompt"/>, say <value expr="_prompt"/> or press <value expr="_dtmf"/>.
+                <break time="500ms"/>
             </enumerate>
         </prompt>
         <choice next="leyenda_en.vxml">
-            known about legends 
+            legends 
         </choice>
         <choice next="historia_en.vxml">
-            known about history 
+            history 
         </choice>
     </menu>
 </vxml>

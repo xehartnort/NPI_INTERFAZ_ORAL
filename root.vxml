@@ -1,0 +1,9 @@
+<!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/voicexml21/vxml.dtd">
+<vxml version="2.1">
+    <!--
+        Aquí están definidas las variables globales
+    -->
+    <var name="main_lang" expr="'en'"/>
+    <var name="quote_type" expr="''"/> 
+
+</vxml>

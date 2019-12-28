@@ -1,8 +1,50 @@
 <!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/voicexml21/vxml.dtd">
-<vxml version="2.1" xml:lang="en-us" application="main.vxml">
-    <form>
+<vxml version="2.1" xml:lang="en-us" application="root.vxml">
+    <var name="texto"/>
+
+    <form id="welcome_prompt">
         <block>
-            <prompt>History in english</prompt>
+            <prompt>
+                I am going to tell you something about history:
+            </prompt>
+            <assign name="application.quote_type" expr="'historia'"/>
+            <goto next="#get_quote"/>
         </block>
+    </form>
+
+    <form id="get_quote">
+        <block>
+            <data name="textoTMP" srcexpr="'http://npip107.duckdns.org:3000/' + application.quote_type + '?idioma=' + application.main_lang"/>
+            <assign name="texto" expr="textoTMP.getElementsByTagName('texto').item(0).firstChild.data"/>
+            <prompt bargein="false">
+                <value expr="texto"/>.
+                <break time="500ms"/>
+            </prompt>
+            <goto next="#ask_more"/>
+        </block> 
+    </form>
+
+    <form id="ask_more">
+        <field name="cont" type="boolean">
+            <prompt>
+                Do you want to hear another one?
+            </prompt>
+            <catch event="nomatch noinput" count="3">
+                <prompt>
+                    Returning to main menu.
+                </prompt>
+                <goto next="menu_en.vxml"/>
+            </catch>
+            <filled>
+                <if cond="cont == true">
+                    <goto next="#get_quote"/>
+                <else/>
+                    <prompt>
+                        Returning to main menu.
+                    </prompt>
+                    <goto next="menu_en.vxml"/>
+                </if>
+            </filled>
+        </field>
     </form>
 </vxml>
