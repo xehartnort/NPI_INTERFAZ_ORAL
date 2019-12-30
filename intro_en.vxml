@@ -1,10 +1,10 @@
 <!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/voicexml21/vxml.dtd">
-<vxml version="2.1" xml:lang="es-es" application="root.vxml">
+<vxml version="2.1" xml:lang="en-us" application="root.vxml">
     <link event="salir"><grammar src="salida.jsgf"/></link>
     <link event="ayuda"><grammar src="ayuda.jsgf"/></link>
     <form id="short_intro">
         <block>
-            <prompt>
+            <prompt bargein="false">
                 Palace of the Lions is located east of Comares, and occupies what would be the former garden of this. It was erected, during the second government of Muhammad V (1362-1391). The palace, with an approximate area of ​​1900 m2, has its central axis in the so-called Patio de los Leones, which gives its name to the palace, and the rooms are structured from this patio.            
             </prompt>
             <goto next="#more_info"/>

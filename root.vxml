@@ -3,12 +3,12 @@
     <!--
         Aquí están definidas las variables globales
     -->
-    <var name="main_lang" expr="'es'"/>
+    <var name="main_lang" expr="''"/>
 
     <catch event="ayuda">
         <if cond="main_lang=='es'">
             <prompt>
-                Esta aplicacición le permitira saber como llegar, que lugares visitar y mucho más. 
+                Esta aplicacion le permitira saber como llegar, que lugares visitar y mucho mas. 
                 Parece que te has perdido.
                 Recuerda que en cualquier momento puedes volver al menu principal diciendo: menu o salir.
                 Volviendo al menu principal.
@@ -18,7 +18,7 @@
             <prompt>
                 This application allows you to know how to get to the palace, which places to visit and more things.
                 It looks like you are lost. 
-                Remember that to return to the main menu say: menu or exit.
+                Remember that to return to the main menu say: menu or quit.
                 Returning to the main menu.
             </prompt>
             <goto next="menu_en.vxml"/>

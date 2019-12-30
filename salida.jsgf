@@ -3,4 +3,4 @@
 
 grammar salida;
 
-public <salida> = exit | salir | menu;
+public <salida> = quit | salir | menu;
