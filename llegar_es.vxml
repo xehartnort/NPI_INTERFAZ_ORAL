@@ -1,0 +1,19 @@
+<!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/voicexml21/vxml.dtd">
+<vxml version="2.1" xml:lang="es-es">
+    <link event="salir"><grammar src="salida.jsgf"/></link>
+    <link event="ayuda"><grammar src="ayuda.jsgf"/></link>
+    <menu>
+        <prompt>
+            Como quieres llegar? Si quieres ir andando pulsa 1, para transporte publico pulsa 2, para indicaciones en coche pulsa 3.
+        </prompt>
+        <choice dtmf="1" next="pie_es.vxml">
+            A pie 
+        </choice>
+        <choice dtmf="2" next="publico_es.vxml">
+            En transporte publico 
+        </choice>
+        <choice dtmf="3" next="coche_es.vxml">
+            En coche 
+        </choice>
+    </menu>
+</vxml>

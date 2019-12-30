@@ -1,0 +1,15 @@
+<!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/voicexml21/vxml.dtd">
+<vxml version="2.1" xml:lang="en-us" application="root.vxml">
+    <link event="salir"><grammar src="salida.jsgf"/></link>
+    <link event="ayuda"><grammar src="ayuda.jsgf"/></link>
+    <form id="welcome_prompt">
+        <block>
+            <prompt>
+                Private vehicles are not allowed to circulate around the Alhambra, or park nearby.
+                There is a car park near the Alhambra Access Pavilion, but you will have to access it from the Sierra Highway or the A44 Highway.
+                Returning to the how to get to the palace menu.
+            </prompt>
+            <goto next="llegar_en.vxml"/>
+        </block>
+    </form>
+</vxml>

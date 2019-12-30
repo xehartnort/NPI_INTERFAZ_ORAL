@@ -1,17 +1,14 @@
- 
 <!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/voicexml21/vxml.dtd">
 <vxml version="2.1" xml:lang="es-es" application="root.vxml">
-
     <link event="salir"><grammar src="salida.jsgf"/></link>
     <link event="ayuda"><grammar src="ayuda.jsgf"/></link>
-
-    <form id="lugares">
+    <form id="welcome_prompt">
         <block>
             <prompt>
-                Los banios se encuentran cerca del palacio de Carlos quinto, en la entrada. Volviendo al menu de ubicaciones interesantes.
+                Las lineas que hacen el trayecto del centro a la Alhambra son la C30 y C32. Esta ultima, ademas, conecta el monumento nazari con el barrio del Albaicin. Estos autobuses tienen una frecuencia media de 8 minutos.
+                Volviendo al menu de como llegar al palacio.
             </prompt>
-            <goto next="ubicaciones_es.vxml"/>
+            <goto next="llegar_es.vxml"/>
         </block>
     </form>
-
 </vxml>

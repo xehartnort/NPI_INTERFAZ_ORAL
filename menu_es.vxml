@@ -11,14 +11,20 @@
             </enumerate>
             Para volver al menu principal en cualquier sitio: di menu. 
         </prompt>
+        <choice next="intro_es.vxml">
+            origenes del palacio
+        </choice>
         <choice next="ubicaciones_es.vxml">
             ubicaciones de interes
         </choice>
         <choice next="historia_es.vxml">
-            historia 
+            historia del palacio
+        </choice>
+        <choice next="llegar_es.vxml">
+            como llegar al palacio
         </choice>
         <choice next="leyenda_es.vxml">
-            leyendas 
+            leyendas del palacio
         </choice>
     </menu>
 </vxml>

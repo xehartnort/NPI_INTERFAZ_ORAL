@@ -4,43 +4,39 @@
         Aquí están definidas las variables globales
     -->
     <var name="main_lang" expr="'es'"/>
-    <var name="quote_type" expr="''"/>
 
     <catch event="ayuda">
-        <goto next="#help"/>
+        <if cond="main_lang=='es'">
+            <prompt>
+                Esta aplicacición le permitira saber como llegar, que lugares visitar y mucho más. 
+                Parece que te has perdido.
+                Recuerda que en cualquier momento puedes volver al menu principal diciendo: menu o salir.
+                Volviendo al menu principal.
+            </prompt>
+            <goto next="menu_es.vxml"/>
+        <else/>
+            <prompt>
+                This application allows you to know how to get to the palace, which places to visit and more things.
+                It looks like you are lost. 
+                Remember that to return to the main menu say: menu or exit.
+                Returning to the main menu.
+            </prompt>
+            <goto next="menu_en.vxml"/>
+        </if>
     </catch>
-    <form id="help">
-        <block>
-            <if cond="main_lang=='es'">
-                <prompt bargein="false">
-                    Para volver al menu principal di: menu o salir.
-                </prompt>
-            <else/>
-                <prompt bargein="false">
-                    To return to the main menu say: menu or exit.
-                </prompt>
-                <goto next="menu_en.vxml"/>
-            </if>
-        </block>
-    </form>
 
     <catch event="salir">
-        <goto next="#salida"/>
+        <if cond="main_lang=='es'">
+            <prompt>
+                Volviendo al menu principal.
+            </prompt>
+            <goto next="menu_es.vxml"/>
+        <else/>
+            <prompt>
+                Returning to the main menu.
+            </prompt>
+            <goto next="menu_en.vxml"/>
+        </if>
     </catch>
-    <form id="salida">
-        <block>
-            <if cond="main_lang=='es'">
-                <prompt>
-                        Volviendo al menu principal.
-                </prompt>
-                <goto next="menu_es.vxml"/>
-            <else/>
-                <prompt>
-                        Returning to the main menu.
-                </prompt>
-                <goto next="menu_en.vxml"/>
-            </if>
-        </block>
-    </form>
 
 </vxml>

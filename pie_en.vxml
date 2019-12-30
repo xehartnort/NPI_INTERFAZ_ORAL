@@ -1,0 +1,53 @@
+<!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/voicexml21/vxml.dtd">
+<vxml version="2.1" xml:lang="en-us" application="root.vxml">
+    <link event="salir"><grammar src="salida.jsgf"/></link>
+    <link event="ayuda"><grammar src="ayuda.jsgf"/></link>
+    <form id="welcome_prompt">
+        <block>
+            <prompt>
+                To get to the lion's courtyard you have to access through the access hall to the Alhambra.
+                A very nice way to climb is by walking along the Cuesta de Gomerez from Plaza Nueva.
+                You can also reach the monumental enclosure of the Alhambra from the Realejo neighborhood, by the steep Cuesta del Realejo and Antequeruela Baja street, which are very narrow and have no sidewalk.
+                From the Paseo de los Tristes there is another road that will take you to the Alhambra along the Cuesta de los Chinos or the Rey Chico.
+            </prompt>
+            <goto next="#more_info"/>
+        </block>
+    </form>
+
+    <form id="more_info">
+        <field name="cont">
+            <grammar src="aceptar_en.jsgf"/>
+            <prompt>
+                Granada is beautiful, do you want to know somewhere to take photos?
+            </prompt>
+            <catch event="nomatch noinput" count="3">
+                <prompt>
+                    Returning to the how to get to the palace menu.
+                </prompt>
+                <goto next="llegar_en.vxml"/>
+            </catch> 
+            <filled>
+                <if cond="cont != 'no'">
+                    <goto next="#fotos"/>
+                <else/>
+                    <prompt>
+                        Returning to the how to get to the palace menu.
+                    </prompt>
+                    <goto next="llegar_en.vxml"/>
+                </if>
+            </filled>
+        </field>
+    </form>
+
+    <form id="fotos">
+        <block>
+            <prompt>
+                A photograph that should not be missing is at the Puerta de la Justicia, one of the entrances to the Alhambra.
+                The slope of Gomez also offers a beautiful environment, with lots of vegetation, to take a snapshot.
+                Returning to the how to get to the palace menu.
+            </prompt>
+            <goto next="llegar_en.vxml"/>
+        </block>
+    </form>
+
+</vxml>

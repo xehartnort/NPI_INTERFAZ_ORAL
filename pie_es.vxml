@@ -1,0 +1,53 @@
+<!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/voicexml21/vxml.dtd">
+<vxml version="2.1" xml:lang="es-es" application="root.vxml">
+    <link event="salir"><grammar src="salida.jsgf"/></link>
+    <link event="ayuda"><grammar src="ayuda.jsgf"/></link>
+    <form id="welcome_prompt">
+        <block>
+            <prompt>
+                Para llegar al patio de los leones tienes que acceder por el pabellon de acceso a la alhambra.
+                Una manera muy agradable de subir es caminando por la Cuesta de Gomerez desde Plaza Nueva. 
+                Tambien se puede llegar al recinto monumental de la Alhambra desde el barrio del Realejo, por las empinadas Cuesta del Realejo y calle Antequeruela Baja, que son muy estrechas y no tienen apenas acera.
+                Desde el Paseo de los Tristes hay otro camino que le llevara a la Alhambra por la Cuesta de los Chinos o del Rey Chico.
+            </prompt>
+            <goto next="#more_info"/>
+        </block>
+    </form>
+
+    <form id="more_info">
+        <field name="cont">
+            <grammar src="aceptar_es.jsgf"/>
+            <prompt>
+                Granada es preciosa, quiere saber algun sitio para tomar fotos? 
+            </prompt>
+            <catch event="nomatch noinput" count="3">
+                <prompt>
+                    Volviendo al menu de como llegar al palacio.
+                </prompt>
+                <goto next="llegar_es.vxml"/>
+            </catch> 
+            <filled>
+                <if cond="cont != 'no'">
+                    <goto next="#fotos"/>
+                <else/>
+                    <prompt>
+                        Volviendo al menu de como llegar al palacio.
+                    </prompt>
+                    <goto next="llegar_es.vxml"/>
+                </if>
+            </filled>
+        </field>
+    </form>
+
+    <form id="fotos">
+        <block>
+            <prompt>
+                una fotografia que no debe faltar es en la Puerta de la Justicia, una de las entradas a la Alhambra. 
+                La cuesta de gomerez tambien ofrece un entorno precioso, con mucha vegetacion, para tomar una instantanea.
+                Volviendo al menu de como llegar al palacio.
+            </prompt>
+            <goto next="llegar_es.vxml"/>
+        </block>
+    </form>
+
+</vxml>
