@@ -6,9 +6,9 @@
     <form id="lugares">
         <block>
             <prompt>
-                Para comer esta el restaurante Parador, justo al lado del Hotel Parador. Volviendo al menu principal.
+                Para comer esta el restaurante Parador, justo al lado del Hotel Parador. Volviendo al menu de ubicaciones interesantes.
             </prompt>
-            <goto next="menu_es.vxml"/>
+            <goto next="ubicaciones_es.vxml"/>
         </block>
     </form>
 

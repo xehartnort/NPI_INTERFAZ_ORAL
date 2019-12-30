@@ -6,9 +6,9 @@
     <form id="lugares">
         <block>
             <prompt>
-                Los banios se encuentran cerca del palacio de Carlos quinto, en la entrada. Volviendo al menu principal.
+                Los banios se encuentran cerca del palacio de Carlos quinto, en la entrada. Volviendo al menu de ubicaciones interesantes.
             </prompt>
-            <goto next="menu_es.vxml"/>
+            <goto next="ubicaciones_es.vxml"/>
         </block>
     </form>
 

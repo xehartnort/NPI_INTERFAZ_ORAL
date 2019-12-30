@@ -6,9 +6,9 @@
     <form id="lugares">
         <block>
             <prompt>
-                The toilet is near Carlos the fifth's Palace. Returning to the main menu.
+                The toilet is near Carlos the fifth's Palace. Returning to the place of interest menu.
             </prompt>
-            <goto next="menu_en.vxml"/>
+            <goto next="ubicaciones_en.vxml"/>
         </block>
     </form>
 

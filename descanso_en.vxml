@@ -16,18 +16,18 @@
 
         <catch event="nomatch noinput" count="3">
             <prompt>
-                Returning to main menu.
+                Returning to the place of interest menu.
             </prompt>
-            <goto next="menu_en.vxml"/>
+            <goto next="ubicaciones_en.vxml"/>
         </catch>
     </menu>
 
     <form id="dormir">
         <block>
             <prompt>
-                There are two hotels in Alhambra, Parador hotel and America Granada Hotel, both next to Partal's garden, it is near of Lion's Palace. Returning to main menu.
+                There are two hotels in Alhambra, Parador hotel and America Granada Hotel, both next to Partal's garden, it is near of Lion's Palace. Returning to the place of interest menu.
             </prompt>
-            <goto next="menu_en.vxml"/>
+            <goto next="ubicaciones_en.vxml"/>
         </block>
     </form>
 
@@ -35,9 +35,9 @@
 
         <block>
             <prompt>
-                There are two gardens at both sides of Lion's Palace, Machuca's garden and Partal's garden where you can sit down and rest a bit. Returning to main menu.
+                There are two gardens at both sides of Lion's Palace, Machuca's garden and Partal's garden where you can sit down and rest a bit. Returning to the place of interest menu.
             </prompt>
-            <goto next="menu_en.vxml"/>
+            <goto next="ubicaciones_en.vxml"/>
         </block>
     </form>
 </vxml>

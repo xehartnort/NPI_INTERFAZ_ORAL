@@ -1,0 +1,5 @@
+#JSGF V1.0;
+
+grammar decide;
+
+public <decide> = si | vale | venga | no;

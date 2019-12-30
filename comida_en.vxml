@@ -6,9 +6,9 @@
     <form id="lugares">
         <block>
             <prompt>
-                You can eat in Parador restaurant next to Parador hotel. Returning to the main menu.
+                You can eat in Parador restaurant next to Parador hotel. Returning to the place of interest menu.
             </prompt>
-            <goto next="menu_en.vxml"/>
+            <goto next="ubicaciones_en.vxml"/>
         </block>
     </form>
 

@@ -15,9 +15,9 @@
 
         <catch event="nomatch noinput" count="3">
             <prompt>
-                Volviendo al menu principal.
+                Volviendo al menu de ubicaciones interesantes.
             </prompt>
-            <goto next="menu_es.vxml"/>
+            <goto next="ubicaciones_es.vxml"/>
         </catch>
         
     </menu>
@@ -26,9 +26,9 @@
     <form id="dormir">
         <block>
             <prompt>
-                Hay dos hoteles en la Alhambra, Hotel America Granada y Hotel Parador ambos se encuentran al lado de los jardines del Partal, cerca del palacio de los leones. Volviendo al menu principal.
+                Hay dos hoteles en la Alhambra, Hotel America Granada y Hotel Parador ambos se encuentran al lado de los jardines del Partal, cerca del palacio de los leones. Volviendo al menu de ubicaciones interesantes.
             </prompt>
-            <goto next="menu_es.vxml"/>
+            <goto next="ubicaciones_es.vxml"/>
         </block>
 
     </form>
@@ -37,9 +37,9 @@
     <form id="un_rato">
         <block>
             <prompt>
-                Hay dos jardines a ambos lados del palacio de los leones, el patio de Machuca y los jardines del Partal, donde se puede sentar y descansar un rato. Volviendo al menu principal.
+                Hay dos jardines a ambos lados del palacio de los leones, el patio de Machuca y los jardines del Partal, donde se puede sentar y descansar un rato. Volviendo al menu de ubicaciones interesantes.
             </prompt>
-            <goto next="menu_es.vxml"/>
+            <goto next="ubicaciones_es.vxml"/>
         </block>
         
     </form>

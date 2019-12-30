@@ -12,26 +12,27 @@
     </form>
 
     <form id="saber_mas">
-        <field name="mas" type="boolean">
+        <field name="cont">
+            <grammar src="aceptar_en.jsgf"/>
             <prompt>
                 Do you want to know more places?
             </prompt>
 
             <catch event="nomatch noinput" count="3">
                 <prompt>
-                    Returning to main menu.
+                    Returning to the place of interest menu.
                 </prompt>
-                <goto next="menu_en.vxml"/>
+                <goto next="ubicaciones_en.vxml"/>
             </catch>
 
             <filled>
-                <if cond="mas == true">
+                <if cond="cont != 'no'">
                     <goto next="#mas_info"/>
                 <else/>
                     <prompt>
-                        Returning to main menu.
+                        Returning to the place of interest menu.
                     </prompt>
-                    <goto next="menu_en.vxml"/>
+                    <goto next="ubicaciones_en.vxml"/>
                 </if>
             </filled>
         </field>
@@ -40,9 +41,9 @@
     <form id="mas_info">
         <block>
             <prompt>
-                I recommend you to appreciate the domes of Dos Hermanas room and Abencerrajes room or the garden of Daraxa. Returning to main menu.
+                I recommend you to appreciate the domes of Dos Hermanas room and Abencerrajes room or the garden of Daraxa. Returning to the place of interest menu.
             </prompt>
-            <goto next="menu_en.vxml"/>
+            <goto next="ubicaciones_en.vxml"/>
         </block>
     </form>
     

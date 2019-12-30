@@ -2,4 +2,4 @@
 
 grammar salida;
 
-public <salida> = exit | salir | menu;
+public <salida> = exit | salir | menu principal;

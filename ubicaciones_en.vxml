@@ -19,8 +19,6 @@
 
         <choice next="banio_en.vxml">toilet</choice>
 
-        <choice next="menu_en.vxml">exit</choice>
-
         <catch event="nomatch noinput" count="3">
             <prompt>
                 Returning to main menu.

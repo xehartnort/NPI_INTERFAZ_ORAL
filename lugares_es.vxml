@@ -12,26 +12,27 @@
     </form>
 
     <form id="saber_mas">
-        <field name="mas" type="boolean">
+        <field name="cont">
+            <grammar src="aceptar_es.jsgf"/>
             <prompt>
                 Te digo mas sitios?
             </prompt>
 
             <catch event="nomatch noinput" count="3">
                 <prompt>
-                    Volviendo al menu principal.
+                    Volviendo al menu de ubicaciones interesantes.
                 </prompt>
-                <goto next="menu_es.vxml"/>
+                <goto next="ubicaciones_es.vxml"/>
             </catch>
 
             <filled>
-                <if cond="mas == true">
+                <if cond="cont != 'no'">
                     <goto next="#mas_info"/>
                 <else/>
                     <prompt>
-                        Volviendo al menu principal.
+                        Volviendo al menu de ubicaciones interesantes.
                     </prompt>
-                    <goto next="menu_es.vxml"/>
+                    <goto next="ubicaciones_es.vxml"/>
                 </if>
             </filled>
         </field>
@@ -40,9 +41,9 @@
     <form id="mas_info">
         <block>
             <prompt>
-                Puedes ver las preciosas cupulas de las salas de dos hermanas y abencerrajes y el patio de Daraxa. Volviendo al menu principal.
+                Puedes ver las preciosas cupulas de las salas de dos hermanas y abencerrajes y el patio de Daraxa. Volviendo al menu de ubicaciones interesantes.
             </prompt>
-            <goto next="menu_es.vxml"/>
+            <goto next="ubicaciones_es.vxml"/>
         </block>
     </form>
     

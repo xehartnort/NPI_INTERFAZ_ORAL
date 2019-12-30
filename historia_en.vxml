@@ -26,7 +26,8 @@
     </form>
 
     <form id="ask_more">
-        <field name="cont" type="boolean">
+        <field name="cont">
+            <grammar src="aceptar_en.jsgf"/>
             <prompt>
                 Do you want to hear another one?
             </prompt>
@@ -37,7 +38,7 @@
                 <goto next="menu_en.vxml"/>
             </catch>
             <filled>
-                <if cond="cont == true">
+                <if cond="cont  != 'no'">
                     <goto next="#get_quote"/>
                 <else/>
                     <prompt>
