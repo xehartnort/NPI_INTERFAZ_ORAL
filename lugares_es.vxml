@@ -1,0 +1,51 @@
+<!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/voicexml21/vxml.dtd">
+<vxml version="2.1" xml:lang="es-es" application="root.vxml">
+    <link event="salir"><grammar src="salida.jsgf"/></link>
+
+    <form id="lugares">
+        <block>
+            <prompt>
+                Te recomiendo ver el patio de los leones y echar alguna foto a traves de las columnas, ver las paredes y el techo de la sala de los mocarabes o ver la pintura del techo de la sala de los reyes.
+            </prompt>
+            <goto next="#saber_mas"/>
+        </block>
+    </form>
+
+    <form id="saber_mas">
+        <field name="mas" type="boolean">
+            <prompt>
+                Te digo mas sitios?
+            </prompt>
+
+            <catch event="nomatch noinput" count="3">
+                <prompt>
+                    Volviendo al menu principal.
+                </prompt>
+                <goto next="menu_es.vxml"/>
+            </catch>
+
+            <filled>
+                <if cond="mas == true">
+                    <goto next="#mas_info"/>
+                <else/>
+                    <prompt>
+                        Volviendo al menu principal.
+                    </prompt>
+                    <goto next="menu_es.vxml"/>
+                </if>
+            </filled>
+        </field>
+    </form>
+
+    <form id="mas_info">
+        <block>
+            <prompt>
+                Puedes ver las preciosas cupulas de las salas de dos hermanas y abencerrajes y el patio de Daraxa. Volviendo al menu principal.
+            </prompt>
+            <goto next="menu_es.vxml"/>
+        </block>
+    </form>
+    
+
+
+</vxml>

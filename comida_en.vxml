@@ -1,0 +1,15 @@
+<!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/voicexml21/vxml.dtd">
+<vxml version="2.1" xml:lang="en-us" application="root.vxml">
+
+    <link event="salir"><grammar src="salida.jsgf"/></link>
+
+    <form id="lugares">
+        <block>
+            <prompt>
+                You can eat in Parador restaurant next to Parador hotel. Returning to the main menu.
+            </prompt>
+            <goto next="menu_en.vxml"/>
+        </block>
+    </form>
+
+</vxml>

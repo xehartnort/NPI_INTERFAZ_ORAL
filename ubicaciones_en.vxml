@@ -1,0 +1,33 @@
+<!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/voicexml21/vxml.dtd">
+<vxml version="2.1" xml:lang="en-us" application="root.vxml">
+
+    <link event="salir"><grammar src="salida.jsgf"/></link>
+
+    <menu id="ubicaciones" accept="approximate">
+
+        <prompt>
+            If you want to know any location or go to menu you have to say: beautiful places, or rest, or  food, or toilet.
+            <break time="500ms"/>
+            If you want to go back to the main menu say: exit or menu.
+        </prompt>
+
+        <choice next="lugares_en.vxml">beautiful places</choice>
+
+        <choice next="descanso_en.vxml">rest</choice>
+
+        <choice next="comida_en.vxml">food</choice>
+
+        <choice next="banio_en.vxml">toilet</choice>
+
+        <choice next="menu_en.vxml">exit</choice>
+
+        <catch event="nomatch noinput" count="3">
+            <prompt>
+                Returning to main menu.
+            </prompt>
+            <goto next="menu_en.vxml"/>
+        </catch> 
+
+    </menu>
+
+</vxml>

@@ -1,5 +1,5 @@
 <!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/voicexml21/vxml.dtd">
-<vxml version="2.1" xml:lang="en-us" application="root.vxml">
+<vxml version="2.1" xml:lang="en-us">
     <menu dtmf="true" accept="approximate">
         <prompt>
             Welcome to the main menu
@@ -9,11 +9,14 @@
                 <break time="500ms"/>
             </enumerate>
         </prompt>
-        <choice next="leyenda_en.vxml">
-            legends 
+        <choice next="ubicaciones_en.vxml">
+            places of interest
         </choice>
         <choice next="historia_en.vxml">
             history 
+        </choice>
+        <choice next="leyenda_en.vxml">
+            legends 
         </choice>
     </menu>
 </vxml>

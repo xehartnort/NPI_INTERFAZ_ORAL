@@ -1,7 +1,8 @@
 <!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/voicexml21/vxml.dtd">
 <vxml version="2.1" xml:lang="es-es" application="root.vxml">
     <var name="texto"/>
-
+    <link event="salir"><grammar src="salida.jsgf"/></link>
+    
     <form id="welcome_prompt">
         <block>
             <prompt>

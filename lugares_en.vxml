@@ -1,0 +1,51 @@
+<!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/voicexml21/vxml.dtd">
+<vxml version="2.1" xml:lang="en-us" application="root.vxml">
+    <link event="salir"><grammar src="salida.jsgf"/></link>
+
+    <form id="lugares">
+        <block>
+            <prompt>
+                I recommend you Patio of lions where you can take photos between the columns, you can see the walls and the ceiling of the room of mocharabes or the beautiful painting in the kings room.
+            </prompt>
+            <goto next="#saber_mas"/>
+        </block>
+    </form>
+
+    <form id="saber_mas">
+        <field name="mas" type="boolean">
+            <prompt>
+                Do you want to know more places?
+            </prompt>
+
+            <catch event="nomatch noinput" count="3">
+                <prompt>
+                    Returning to main menu.
+                </prompt>
+                <goto next="menu_en.vxml"/>
+            </catch>
+
+            <filled>
+                <if cond="mas == true">
+                    <goto next="#mas_info"/>
+                <else/>
+                    <prompt>
+                        Returning to main menu.
+                    </prompt>
+                    <goto next="menu_en.vxml"/>
+                </if>
+            </filled>
+        </field>
+    </form>
+
+    <form id="mas_info">
+        <block>
+            <prompt>
+                I recommend you to appreciate the domes of Dos Hermanas room and Abencerrajes room or the garden of Daraxa. Returning to main menu.
+            </prompt>
+            <goto next="menu_en.vxml"/>
+        </block>
+    </form>
+    
+
+
+</vxml>

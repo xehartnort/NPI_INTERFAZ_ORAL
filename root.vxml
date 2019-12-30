@@ -3,7 +3,26 @@
     <!--
         Aquí están definidas las variables globales
     -->
-    <var name="main_lang" expr="'en'"/>
-    <var name="quote_type" expr="''"/> 
+    <var name="main_lang" expr="'es'"/>
+    <var name="quote_type" expr="''"/>
+
+    <catch event="salir">
+        <goto next="#salida"/>
+    </catch>
+    <form id="salida">
+        <block>
+            <if cond="main_lang=='es'">
+                <prompt>
+                        Volviendo al menu principal.
+                </prompt>
+                <goto next="menu_es.vxml"/>
+            <else/>
+                <prompt>
+                        Returning to the main menu.
+                </prompt>
+                <goto next="menu_en.vxml"/>
+            </if>
+        </block>
+    </form>
 
 </vxml>

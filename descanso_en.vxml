@@ -1,0 +1,43 @@
+<!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/voicexml21/vxml.dtd">
+<vxml version="2.1" xml:lang="en-us" application="root.vxml">
+
+    <link event="salir"><grammar src="salida.jsgf"/></link>
+
+    <menu id="descanso" accept="approximate">
+
+        <prompt>
+        <!-- Aniade un enumerate aquí-->
+            If you want to sleep say sleep. Say rest if you want to rest a bit.
+        </prompt>
+
+        <choice next="#dormir">sleep</choice>
+
+        <choice next="#un_rato">rest</choice>
+
+        <catch event="nomatch noinput" count="3">
+            <prompt>
+                Returning to main menu.
+            </prompt>
+            <goto next="menu_en.vxml"/>
+        </catch>
+    </menu>
+
+    <form id="dormir">
+        <block>
+            <prompt>
+                There are two hotels in Alhambra, Parador hotel and America Granada Hotel, both next to Partal's garden, it is near of Lion's Palace. Returning to main menu.
+            </prompt>
+            <goto next="menu_en.vxml"/>
+        </block>
+    </form>
+
+    <form id="un_rato">
+
+        <block>
+            <prompt>
+                There are two gardens at both sides of Lion's Palace, Machuca's garden and Partal's garden where you can sit down and rest a bit. Returning to main menu.
+            </prompt>
+            <goto next="menu_en.vxml"/>
+        </block>
+    </form>
+</vxml>

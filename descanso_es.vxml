@@ -1,0 +1,49 @@
+<!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/voicexml21/vxml.dtd">
+<vxml version="2.1" xml:lang="es-es" application="root.vxml">
+
+    <link event="salir"><grammar src="salida.jsgf"/></link>
+
+    <menu id="descanso" accept="approximate">
+
+        <prompt>
+            Si quieres un sitio para dormir di dormir, si quieres un sitio para descansar un rato di un rato.
+        </prompt>
+
+        <choice next="#dormir">dormir</choice>
+
+        <choice next="#un_rato">un rato</choice>
+
+        <catch event="nomatch noinput" count="3">
+            <prompt>
+                Volviendo al menu principal.
+            </prompt>
+            <goto next="menu_es.vxml"/>
+        </catch>
+        
+    </menu>
+
+
+    <form id="dormir">
+        <block>
+            <prompt>
+                Hay dos hoteles en la Alhambra, Hotel America Granada y Hotel Parador ambos se encuentran al lado de los jardines del Partal, cerca del palacio de los leones. Volviendo al menu principal.
+            </prompt>
+            <goto next="menu_es.vxml"/>
+        </block>
+
+    </form>
+
+
+    <form id="un_rato">
+        <block>
+            <prompt>
+                Hay dos jardines a ambos lados del palacio de los leones, el patio de Machuca y los jardines del Partal, donde se puede sentar y descansar un rato. Volviendo al menu principal.
+            </prompt>
+            <goto next="menu_es.vxml"/>
+        </block>
+        
+    </form>
+
+
+
+</vxml>
