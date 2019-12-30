@@ -7,7 +7,7 @@
 
     <catch event="ayuda">
         <if cond="main_lang=='es'">
-            <prompt>
+            <prompt bargein="false">
                 Esta aplicacion le permitira saber como llegar, que lugares visitar y mucho mas. 
                 Parece que te has perdido.
                 Recuerda que en cualquier momento puedes volver al menu principal diciendo: menu o salir.
@@ -15,7 +15,7 @@
             </prompt>
             <goto next="menu_es.vxml"/>
         <else/>
-            <prompt>
+            <prompt bargein="false">
                 This application allows you to know how to get to the palace, which places to visit and more things.
                 It looks like you are lost. 
                 Remember that to return to the main menu say: menu or quit.
@@ -27,12 +27,12 @@
 
     <catch event="salir">
         <if cond="main_lang=='es'">
-            <prompt>
+            <prompt bargein="false">
                 Volviendo al menu principal.
             </prompt>
             <goto next="menu_es.vxml"/>
         <else/>
-            <prompt>
+            <prompt bargein="false">
                 Returning to the main menu.
             </prompt>
             <goto next="menu_en.vxml"/>
