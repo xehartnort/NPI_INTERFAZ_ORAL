@@ -9,6 +9,7 @@
                 To know about <value expr="_prompt"/>, say <value expr="_prompt"/> or press <value expr="_dtmf"/>.
                 <break time="500ms"/>
             </enumerate>
+            If you want to go back to the main menu say: exit or menu.
         </prompt>
         <choice next="ubicaciones_en.vxml">
             places of interest

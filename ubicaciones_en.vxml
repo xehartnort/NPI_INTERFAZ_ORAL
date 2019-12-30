@@ -2,13 +2,13 @@
 <vxml version="2.1" xml:lang="en-us" application="root.vxml">
 
     <link event="salir"><grammar src="salida.jsgf"/></link>
+    <link event="ayuda"><grammar src="ayuda.jsgf"/></link>
 
     <menu id="ubicaciones" accept="approximate">
 
         <prompt>
             If you want to know any location or go to menu you have to say: beautiful places, or rest, or  food, or toilet.
             <break time="500ms"/>
-            If you want to go back to the main menu say: exit or menu.
         </prompt>
 
         <choice next="lugares_en.vxml">beautiful places</choice>

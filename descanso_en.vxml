@@ -2,6 +2,7 @@
 <vxml version="2.1" xml:lang="en-us" application="root.vxml">
 
     <link event="salir"><grammar src="salida.jsgf"/></link>
+    <link event="ayuda"><grammar src="ayuda.jsgf"/></link>
 
     <menu id="descanso" accept="approximate">
 
@@ -32,7 +33,6 @@
     </form>
 
     <form id="un_rato">
-
         <block>
             <prompt>
                 There are two gardens at both sides of Lion's Palace, Machuca's garden and Partal's garden where you can sit down and rest a bit. Returning to the place of interest menu.

@@ -1,0 +1,5 @@
+#JSGF V1.0;
+
+grammar help_;
+
+public <help_> = ayuda | help | socorro;

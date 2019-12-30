@@ -9,6 +9,7 @@
                 Para saber sobre <value expr="_prompt"/>, di <value expr="_prompt"/> o pulsa <value expr="_dtmf"/>
                 <break time="500ms"/>
             </enumerate>
+            Para volver al menu principal en cualquier sitio: di menu. 
         </prompt>
         <choice next="ubicaciones_es.vxml">
             ubicaciones de interes

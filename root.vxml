@@ -6,6 +6,24 @@
     <var name="main_lang" expr="'es'"/>
     <var name="quote_type" expr="''"/>
 
+    <catch event="ayuda">
+        <goto next="#help"/>
+    </catch>
+    <form id="help">
+        <block>
+            <if cond="main_lang=='es'">
+                <prompt bargein="false">
+                    Para volver al menu principal di: menu o salir.
+                </prompt>
+            <else/>
+                <prompt bargein="false">
+                    To return to the main menu say: menu or exit.
+                </prompt>
+                <goto next="menu_en.vxml"/>
+            </if>
+        </block>
+    </form>
+
     <catch event="salir">
         <goto next="#salida"/>
     </catch>

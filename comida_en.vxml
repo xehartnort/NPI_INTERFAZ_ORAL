@@ -2,6 +2,7 @@
 <vxml version="2.1" xml:lang="en-us" application="root.vxml">
 
     <link event="salir"><grammar src="salida.jsgf"/></link>
+    <link event="ayuda"><grammar src="ayuda.jsgf"/></link>
 
     <form id="lugares">
         <block>

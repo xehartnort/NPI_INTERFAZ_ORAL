@@ -2,6 +2,7 @@
 <vxml version="2.1" xml:lang="es-es" application="root.vxml">
 
     <link event="salir"><grammar src="salida.jsgf"/></link>
+    <link event="ayuda"><grammar src="ayuda.jsgf"/></link>
 
     <menu id="ubicaciones" accept="approximate">
 
